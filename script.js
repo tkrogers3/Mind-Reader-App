@@ -1,6 +1,6 @@
 let state = 0;
 let symbols = "*&^%$#@!?+";
-let winner= 0;
+let winner = 0;
 
 // set up button click handlers
 let goBtn = document.getElementById("goBtn");
@@ -15,6 +15,8 @@ let mainText = document.getElementById("mainText");
 let paragraph = document.getElementById("paragraph");
 let paragraphTwo = document.getElementById("paragraphTwo");
 
+/* Add scroll to H1 */
+document.getElementById('mainText').style.overflow = 'scroll';
 
 
 //functions that move state to next/previous/reset
@@ -31,7 +33,7 @@ function previousState() {
 function resetState() {
     state = 0;
     build();
-} 
+}
 
 // set random symbol and number strings
 
@@ -46,7 +48,7 @@ function numbers() {
     randomSym();
     var numArray = [];
     let string = "";
-    for (let i = 0; i < 100 ; i++) {
+    for (let i = 0; i < 100; i++) {
         if (i % 9 == 0) {
             numArray.push(winner); // pushing winner symbol to multiples of 9
 
@@ -122,7 +124,7 @@ function build() {
             break;
 
         case 4:
-            
+
             mainText.innerHTML = numbers(); /*calling function of array of numbers and
              symbols */
 
@@ -151,12 +153,12 @@ function build() {
 
             resetBtn.style.display = "block";
 
-            
+
             paragraphTwo.textContent = "";
 
             break;
 
-       
+
     }
 }
 
